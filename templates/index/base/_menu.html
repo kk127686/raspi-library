@@ -1,0 +1,44 @@
+<aside class="Hui-aside">
+	<div class="menu_dropdown bk_2">
+		<dl id="menu-product">
+			<dt><i class="Hui-iconfont">&#xe620;</i> 物品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+                    <li><a data-href="{% url 'index:product_cate' %}" data-title="物品分类" href="javascript:void(0)">物品分类</a></li>
+					<li><a data-href="{% url 'index:product_add' %}" data-title="增加物品" href="javascript:void(0)">增加物品</a></li>
+					<li><a data-href="{% url 'index:product_list' %}" data-title="物品列表" href="javascript:void(0)">物品列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-member">
+			<dt><i class="Hui-iconfont">&#xe60d;</i> 用户管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+					<li><a data-href="{% url 'index:user_add' %}" data-title="增加用户" href="javascript:;">增加用户</a></li>
+					<li><a data-href="{% url 'index:user_list' %}" data-title="用户列表" href="javascript:;">用户列表</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-tongji">
+			<dt><i class="Hui-iconfont">&#xe61a;</i> 在线考勤<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+                    <li><a data-href="{% url 'index:event_add' %}" data-title="创建考勤" href="javascript:void(0)">创建考勤</a></li>
+					<li><a data-href="{% url 'index:event_work' %}" data-title="值班考勤记录" href="javascript:void(0)">值班考勤记录</a></li>
+					<li><a data-href="{% url 'index:event_activity' %}" data-title="活动考勤记录" href="javascript:void(0)">活动考勤记录</a></li>
+				</ul>
+			</dd>
+		</dl>
+		<dl id="menu-system">
+			<dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+			<dd>
+				<ul>
+                    <li><a data-href="{% url 'index:system_sms' %}" data-title="短信配置" href="javascript:void(0)">短信配置</a></li>
+                    <li><a data-href="{% url 'index:system_mail' %}" data-title="邮箱配置" href="javascript:void(0)">邮箱配置</a></li>
+					<li><a data-href="{% url 'index:system_feed' %}" data-title="用户反馈" href="javascript:void(0)">用户反馈</a></li>
+					<li><a data-href="{% url 'index:system_update' %}" data-title="更新说明" href="javascript:void(0)">更新说明</a></li>
+				</ul>
+			</dd>
+		</dl>
+	</div>
+</aside>
