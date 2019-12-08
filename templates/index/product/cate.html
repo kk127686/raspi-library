@@ -1,0 +1,53 @@
+﻿<!--_meta 作为公共模版分离出去-->
+{% include 'index/base/_meta.html' %}
+<!--/meta 作为公共模版分离出去-->
+<title>社团资源后台管理系统</title>
+<meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+{% include 'index/base/_header.html' %}
+<!--/_header 作为公共模版分离出去-->
+<!--_menu 作为公共模版分离出去-->
+{% include 'index/base/_menu.html' %}
+<!--/_menu 作为公共模版分离出去-->
+
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 物品管理 <span class="c-gray en">&gt;</span> 物品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+        <div class="pd-20">
+              <form action="{% url 'index:product_cate' %}" method="post" class="form form-horizontal" id="form-user-add">
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类名称：</label><span style="color: red">{{ msg }}</span>
+                  <div class="formControls col-5">
+                      {% csrf_token %}
+                    <input type="text" required="required" class="input-text" placeholder="分类名称" name="cate_name">
+                  </div>
+                  <div class="col-5"> </div>
+                </div>
+                <div class="row cl">
+                  <label class="form-label col-xs-4 col-sm-2">备注：</label>
+                  <div class="formControls col-5">
+                    <textarea name="remarks" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,100)"></textarea>
+                  </div>
+                  <div class="col-5"> </div>
+                </div>
+                <div class="row cl">
+                  <div class="col-9 col-offset-2">
+                    <input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+                  </div>
+                </div>
+              </form>
+            </div>
+		</article>
+	</div>
+</section>
+
+<!--_footer 作为公共模版分离出去-->
+{% include 'index/base/_footer.html' %}
+<!--/_footer /作为公共模版分离出去-->
+<!--请在下方写此页面业务相关的脚本-->
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

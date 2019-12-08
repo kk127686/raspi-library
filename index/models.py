@@ -7,7 +7,7 @@ from django.db import models
 class Product(models.Model):
     pro_name = models.CharField(verbose_name='物品名称', max_length=30)
     pro_num = models.IntegerField(verbose_name='物品数量')
-    pro_cate = models.ForeignKey("productcate", on_delete='CASCADE')
+    pro_cate = models.ForeignKey("ProductCate", on_delete=models.CASCADE)
 
     def __str__(self):
         return self.pro_name
@@ -20,6 +20,7 @@ class Product(models.Model):
 
 class ProductCate(models.Model):
     cate_name = models.CharField(verbose_name='物品分类', max_length=10)
+    # cate_remarks = models.CharField(verbose_name="备注", max_length=50)
     cate_date = models.DateField(auto_now=True)
 
     class Meta:

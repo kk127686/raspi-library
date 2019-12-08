@@ -23,10 +23,6 @@ def logout(request):
     return render(request, 'index/user/login.html')
 
 
-def welcome(request):
-    return render(request, 'index/home/welcome.html')
-
-
 def user_add(request):
     if request.method == 'GET':
         return render(request, 'index/user/add.html')
@@ -56,7 +52,19 @@ def user_delete(request):
 
 
 def product_cate(request):
-    return render(request, 'index/product/list.html')
+    if request.method == 'GET':
+        return render(request, 'index/product/cate.html')
+    else:
+        cate_name = request.POST.get('cate_name', None)
+        cate_remarks = request.POST.get('remarks', '')
+        pcate = ProductCate.objects.get(cate_name=cate_name)
+        if pcate is not None:
+            msg = '该分类已经存在，无需再次添加'
+            return render(request, 'index/product/cate.html', {'msg': msg})
+        else:
+            ProductCate.objects.create(cate_name=cate_name)
+            msg = '添加成功'
+            return render(request, 'index/product/cate.html', {'msg': msg})
 
 
 def product_add(request):
@@ -113,4 +121,3 @@ def system_feed(request):
 
 def system_update(request):
     return render(request, 'index/system/update.html')
-
